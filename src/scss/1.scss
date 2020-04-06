@@ -1,0 +1,124 @@
+$defaultColor: #34f80e;
+
+.b {
+  color: #34f80e;
+}
+
+@mixin links ($normal, $visited, $hover: #dddddd) {
+  a:link {color: $normal;}
+  a:visited {color: $visited;}
+  a:hover {
+    text-decoration: none;
+    color: $hover;
+  }
+}
+
+@mixin setPosition($position) {
+  @if $position == 'left' {
+    position: absolute;
+    left: 0;
+  } @else {
+    position: static;
+  }
+}
+
+
+
+.main-container {
+  @include links(#ff45f9, #ddd300);
+
+  color: red;
+  border: 1px solid $defaultColor;
+  &:hover {
+    color: antiquewhite;
+  }
+  &__first-box {
+    color: blueviolet;
+    display: flex;
+    border: 1px solid lawngreen;
+    &_enabled {
+      text-decoration: underline;
+    }
+  }
+  &__second-box {
+    color: blue;
+  }
+}
+
+.footer-container {
+  font-size: 14px;
+  @include links(red, green, grey);
+}
+/*
+.footer-container {
+  @extend .main-container;
+  font-size: 14px;
+}
+*
+
+ */
+
+
+
+// однострочный комментарий
+/*
+многострочный комментарий
+*/
+
+@mixin rr ($p...) {
+  padding: $p;
+}
+$defaultBgColor: #444444;
+$defaultBgColor2: red;
+
+.block1 {
+  @include rr(10px); // 10px 10px 10px 10px
+  background-color: darken($defaultBgColor, 10%);
+  color: saturate($defaultBgColor, 10%); // насыщенность цвета
+}
+
+.block2 {
+  @include rr(10px 5px); // 10px 5px
+  background-color: lighten($defaultBgColor, 10%);
+  // color: grayscale($defaultBgColor2);
+  color: fade_in($defaultBgColor2, 0.4);
+}
+
+.block2 {
+  @include rr(10px 5px 8px 20px); // 10px 5px 8px 20px
+  color: rgb(100, 120, 200);
+  // color: rgba(100, 120, 200, 0.5);
+}
+
+@for $i from 1 through 10 {
+  .lpBlock-#{ $i } {
+    padding-left: 10px * $i;
+  }
+}
+
+$j: 5;
+@while $j > 0 {
+  .while-item-#{ $j } {
+    margin-left: 5px + ($j * 2);
+  }
+  $j: $j - 1;
+}
+
+$msBlocks: (home, "home.jpg"), (about, 'about.jpg');
+
+@each $id, $image in $msBlocks {
+  .bg-photo-#{ $id }  {
+    background: $image;
+  }
+
+}
+
+$position: 'right';
+
+.block-with-position{
+  @include setPosition($position);
+}
+
+.dodo1 {
+  color: #34f80e;
+}

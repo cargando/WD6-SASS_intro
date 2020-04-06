@@ -1,0 +1,153 @@
+@charset "UTF-8";
+.b {
+  color: #34f80e;
+}
+
+.main-container {
+  color: red;
+  border: 1px solid #34f80e;
+}
+.main-container a:link {
+  color: #ff45f9;
+}
+.main-container a:visited {
+  color: #ddd300;
+}
+.main-container a:hover {
+  text-decoration: none;
+  color: #dddddd;
+}
+.main-container:hover {
+  color: antiquewhite;
+}
+.main-container__first-box {
+  color: blueviolet;
+  display: flex;
+  border: 1px solid lawngreen;
+}
+.main-container__first-box_enabled {
+  text-decoration: underline;
+}
+.main-container__second-box {
+  color: blue;
+}
+
+.footer-container {
+  font-size: 14px;
+}
+.footer-container a:link {
+  color: red;
+}
+.footer-container a:visited {
+  color: green;
+}
+.footer-container a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+/*
+.footer-container {
+  @extend .main-container;
+  font-size: 14px;
+}
+*
+
+ */
+/*
+многострочный комментарий
+*/
+.block1 {
+  padding: 10px;
+  background-color: #2b2b2b;
+  color: #4b3d3d;
+}
+
+.block2 {
+  padding: 10px 5px;
+  background-color: #5e5e5e;
+  color: red;
+}
+
+.block2 {
+  padding: 10px 5px 8px 20px;
+  color: #6478c8;
+}
+
+.lpBlock-1 {
+  padding-left: 10px;
+}
+
+.lpBlock-2 {
+  padding-left: 20px;
+}
+
+.lpBlock-3 {
+  padding-left: 30px;
+}
+
+.lpBlock-4 {
+  padding-left: 40px;
+}
+
+.lpBlock-5 {
+  padding-left: 50px;
+}
+
+.lpBlock-6 {
+  padding-left: 60px;
+}
+
+.lpBlock-7 {
+  padding-left: 70px;
+}
+
+.lpBlock-8 {
+  padding-left: 80px;
+}
+
+.lpBlock-9 {
+  padding-left: 90px;
+}
+
+.lpBlock-10 {
+  padding-left: 100px;
+}
+
+.while-item-5 {
+  margin-left: 15px;
+}
+
+.while-item-4 {
+  margin-left: 13px;
+}
+
+.while-item-3 {
+  margin-left: 11px;
+}
+
+.while-item-2 {
+  margin-left: 9px;
+}
+
+.while-item-1 {
+  margin-left: 7px;
+}
+
+.bg-photo-home {
+  background: "home.jpg";
+}
+
+.bg-photo-about {
+  background: "about.jpg";
+}
+
+.block-with-position {
+  position: static;
+}
+
+.dodo1 {
+  color: #34f80e;
+}
+
+/*# sourceMappingURL=1.css.map */
