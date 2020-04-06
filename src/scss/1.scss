@@ -1,3 +1,21 @@
+@import "2.scss";
+
+@media screen and (max-width: 400px) {
+
+  h1 {
+    color: red;
+  }
+
+}
+
+.some__class {
+  font-size: 25px;
+  @at-root .child1 {
+    text-decoration: none;
+    font-size: 30px;
+  }
+}
+
 $defaultColor: #34f80e;
 
 .b {
@@ -119,6 +137,6 @@ $position: 'right';
   @include setPosition($position);
 }
 
-.dodo1 {
+.dodo1111 {
   color: #34f80e;
 }

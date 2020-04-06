@@ -13,5 +13,176 @@
 			<div>jhsdkf ljhlkdfjh lkhj</div>
 
 		</div>
+
+<script>
+
+
+	var user1 = {
+		name: "Семеныч",
+		age: 30,
+		phone: "555-11-12",
+		address: "ksjhkfsjhd kljshd ",
+	};
+
+	var user2 = {
+		name: "Маруська",
+		age: 30,
+		phone: "555-11-12",
+		address: "ksjhkfsjhd kljshd ",
+	};
+
+	var child1 = {
+		name: "Алешка",
+		age: 3,
+		phone: "555-11-12",
+		address: "ksjhkfsjhd kljshd ",
+	};
+
+	function checkOb(ob1, ob2, ob3) {
+		//	псевдо-массив arguments содержит все параметры, которые переданы в функцию
+		// arguments[0] - это будет гарантировано ob1
+		// arguments[1] - это будет гарантировано ob2
+
+		if (ob3) {
+			ob1.children = ob3; // третий аргумент функции
+			ob2.children = ob3; // третий аргумент функции
+			return true
+		}
+
+		return false
+
+	}
+
+	var res = checkOb(user1, user2);
+	// var ob1 = res.ob1;
+	// var ob2 = res.ob2;
+
+	if (res) {
+		console.log("Ребенок добавлен ", user1, user2); // [object Object]
+	} else {
+		console.log("Ребенок НЕ добавлен ", user1, user2); // [object Object]
+	}
+
+	// Дан массив, сделать функцию, которая находит минимальный и максимальный элемент в массиве
+
+	var ms1 = [50, 39, 3005, 20, 18, 43, 56, 76, -104, 44, 135, 28, 57];
+	//         0,  1,  2,  3,  4,  5,  6, ...
+	// длинна массива 11 элементов
+	// счетчик идет от 0 до условия меньше чем длинна массива
+
+	function searchMinMax(ms) {
+
+		var min = Number.MAX_SAFE_INTEGER;
+
+		var max = Number.MIN_SAFE_INTEGER;
+
+		for (var i = 0; i < ms.length; i++) {
+			if (min > ms[ i ]) {
+				min = ms[ i ];
+			}
+			if (max < ms[ i ]) {
+				max = ms[ i ];
+			}
+		}
+
+		return {
+			min,
+			max,
+		};
+	}
+
+	var res = searchMinMax(ms1);
+	console.log("Результат, задача 1: ", res);
+
+	console.log("Number.MAX_SAFE_INTEGER: ", Number.MAX_SAFE_INTEGER);
+	console.log("Number.MIN_SAFE_INTEGER: ", Number.MIN_SAFE_INTEGER);
+
+	// Есть массив, создать функцию, которая возвращает объект с двумя полями: negative, positive - каждое из которых хранит в себе
+	// положительные и отрицательные значения из массива.
+	/*
+	{
+	  negative: [-3, -10, -50],
+	  positive: [40, 28, 16]
+
+	}
+	*/
+
+	var ms2 = [50, -39, -3005, 20, -18, 43, -56, 76, -104, 44, -135, 28, 57, -66, 98, -5, -400];
+
+	function searchNegPos(ms) {
+
+		var neg = [];
+		var pos = [];
+
+			for (var i=0; i < ms.length; i++) {
+				if (ms[ i ] >= 0) {
+					pos.push(ms[i]);
+				} else {
+					neg.push(ms[i]);
+				}
+			}
+
+		return {neg,pos}
+	}
+
+	var res2 = searchNegPos (ms2);
+	console.log('Результат, задача 2: ', res2);
+
+	// делаем все тоже самое, только в результате вместо массивов с элементами будет
+	// сумма всех положительных элементов и сумма всех отрицательных элементов
+
+	function searchNegPosSumm(ms) {
+		var neg = 0;
+		var pos = 0;
+
+
+		for (var i=0; i < ms.length; i++) {
+			if (ms[ i ] > 0) {
+				pos += ms[ i ];
+			} else {
+				neg += ms[ i ];
+			}
+		}
+		return {
+			neg, // сумма всех отрицательных элементов
+			pos, // сумма всех положительных элементов
+			posCnt: pos.length, // количество положительных элементов
+			negCnt: neg.length, // количество отрицательных элементов
+		}
+	}
+
+	var res3 = searchNegPosSumm(ms2);
+	console.log('Результат, задача 3: ', res3);
+
+
+	// найти в массеве среднее арифметическое и вернуть все элементы массива,
+	// которые больше среднего арифметического;
+
+	var ms4 = [5, -10, 33, 12, 23, -31, 35, 18, 99, 73, 83, 36, 49, 22, 24, 39, 70, 63, 28, 94];
+
+	function calcAverage(ms) {
+		var sum = 0;
+		var cnt = ms.length;
+
+		for (var i=0; i < cnt; i++){
+			sum += ms[ i ];
+		}
+		// var med = sum / cnt;
+		// for (var j=0; j < ms.length; j++) {
+		// 	if (ms[j] > med) msPos.push(ms[j]);
+		// }
+
+		var res = ms.filter(function (item) {
+			return item > sum / cnt
+		});
+
+		return res;
+	}
+
+	var res4 = calcAverage(ms4);
+	console.log('Результат, задача 4: ', res4);
+
+
+</script>
 </body>
 </html>
